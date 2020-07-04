@@ -5,7 +5,7 @@ ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v3.0.0%2Bresin/
 RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 
 
-FROM alpine:3 as build
+FROM arm32v7/alpine:3 as build
 LABEL maintainer="shmick"
 
 # Add QEMU
@@ -21,7 +21,7 @@ RUN patch -p0 < hdhomerun_channels.c.diff
 WORKDIR /src/libhdhomerun
 RUN make
 
-FROM alpine:3
+FROM arm32v7/alpine:3
 RUN apk add --no-cache bash
 WORKDIR /usr/local/bin
 COPY --from=build /src/libhdhomerun/hdhomerun_config .
