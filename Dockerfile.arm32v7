@@ -24,7 +24,7 @@ RUN make
 FROM arm32v7/alpine:3
 
 # Add QEMU
-COPY --from=builder qemu-aarch64-static /usr/bin
+COPY --from=builder qemu-arm-static /usr/bin
 
 RUN apk add --no-cache bash
 WORKDIR /usr/local/bin
