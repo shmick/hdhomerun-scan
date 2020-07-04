@@ -21,6 +21,11 @@ WORKDIR /src/libhdhomerun
 RUN make
 
 FROM arm64v8/alpine:3
+
+# Add QEMU
+COPY --from=builder qemu-aarch64-static /usr/bin
+
+
 RUN apk add --no-cache bash
 WORKDIR /usr/local/bin
 COPY --from=build /src/libhdhomerun/hdhomerun_config .
