@@ -1,16 +1,16 @@
 image: shmick/hdhomerun-scan:latest
 manifests:
-  - image: shmick/hdhomerun-scan:amd64
+  - image: shmick/hdhomerun-scan:latest-amd64
     platform:
       architecture: amd64
       os: linux
-  - image: shmick/hdhomerun-scan:arm32v7
-    platform:
-      architecture: arm
-      os: linux
-      variant: v7
-  - image: shmick/hdhomerun-scan:arm64v8
+  - image: shmick/hdhomerun-scan:latest-arm64v8
     platform:
       architecture: arm64
       os: linux
       variant: v8
+  - image: shmick/hdhomerun-scan:latest-arm32v7
+    platform:
+      architecture: arm
+      os: linux
+      variant: v7
