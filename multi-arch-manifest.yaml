@@ -1,0 +1,15 @@
+image: shmick/hdhomerun-scan:latest
+manifests:
+  - image: shmick/hdhomerun-scan:amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: shmick/hdhomerun-scan:arm32v7
+    platform:
+      architecture: arm
+      os: linux
+      variant: v7
+  - image: shmick/hdhomerun-scan:arm64
+    platform:
+      architecture: arm64
+      os: linux
