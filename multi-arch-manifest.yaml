@@ -9,7 +9,8 @@ manifests:
       architecture: arm
       os: linux
       variant: v7
-  - image: shmick/hdhomerun-scan:arm64
+  - image: shmick/hdhomerun-scan:arm64v8
     platform:
       architecture: arm64
       os: linux
+      variant: v8
