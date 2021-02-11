@@ -4,7 +4,6 @@
 A command line utility to scan a HDHomeRun tuner and report the channels found
 
 ### Contents:
-* [hdhomerun_config](https://info.hdhomerun.com/info/hdhomerun_config) modified to stop scanning at RF 36 for North American antenna channels due to the [FCC Channel Repacking](https://en.wikipedia.org/wiki/Spectrum_reallocation#Repacking)
 * channel_scan.sh and channel_report.sh from https://github.com/shmick/TV_Stuff
 
 ### Usage:
@@ -19,7 +18,7 @@ $ docker run --network host shmick/hdhomerun-scan
 
 #### Run a scan using the IP of a tuner
 ```bash
-$ docker shmick/hdhomerun-scan channel_scan.sh -d <IP of HDHR>
+$ docker run shmick/hdhomerun-scan channel_scan.sh -d <IP of HDHR>
 ```
 
 #### Log the results to a CSV file
