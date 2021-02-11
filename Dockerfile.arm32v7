@@ -16,8 +16,6 @@ WORKDIR /src
 RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_scan.sh
 RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_report.sh
 RUN git clone https://github.com/Silicondust/libhdhomerun
-COPY hdhomerun_channels.c.diff .
-RUN patch -p0 < hdhomerun_channels.c.diff
 WORKDIR /src/libhdhomerun
 RUN make
 
