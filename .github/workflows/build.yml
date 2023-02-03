@@ -3,7 +3,7 @@ name: Create and publish a Docker image
 on:
   push:
     branches:
-      - '2023-02'
+      - 'ubuntu'
     paths:
       - 'Dockerfile'
 
