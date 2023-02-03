@@ -11,7 +11,9 @@ WORKDIR /src/libhdhomerun
 #RUN git checkout 7c54382fb681d03888b469033e50bebaf4ce6bce # good
 #RUN git checkout 8b8d3d7e5e157c1f63378a1c17a397fc35e5487b # bad
 #RUN git checkout 328fdab47f994b0a1a387d1764e298624da7c7c7 # bad
-RUN git checkout 032728af66da1eff490e5b22d0427a314c93fa31
+#RUN git checkout 032728af66da1eff490e5b22d0427a314c93fa31 # 2022-02-03 good
+RUN git checkout 0ea5574fa5b516a3ed6e9912dc3c1c7bc695cce9 # 2022-10-22 ipv6 support
+
 RUN make
 
 FROM alpine:3.17
