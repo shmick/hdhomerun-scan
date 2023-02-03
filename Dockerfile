@@ -1,6 +1,6 @@
 FROM public.ecr.aws/ubuntu/ubuntu:22.04 as build
 
-ARG VERSION="test"
+ARG VERSION="2022.12.02"
 
 RUN apt update
 RUN apt install -y curl git build-essential
