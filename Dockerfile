@@ -4,7 +4,7 @@ ARG VERSION="ubuntu"
 
 #RUN apk update && apk add --no-cache build-base curl git linux-headers gcompat libstdc++
 RUN apt update
-RUN apt install -y curl 
+RUN apt install -y curl git
 
 WORKDIR /src
 RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_scan.sh
