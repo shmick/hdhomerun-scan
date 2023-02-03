@@ -1,5 +1,6 @@
 FROM alpine:3.17 as build
-LABEL maintainer="shmick"
+
+ARG VERSION="2022.12.02"
 
 RUN apk add --no-cache build-base curl git
 WORKDIR /src
