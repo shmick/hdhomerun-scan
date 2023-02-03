@@ -8,6 +8,7 @@ RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_sc
 RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_report.sh
 RUN git clone https://github.com/Silicondust/libhdhomerun
 WORKDIR /src/libhdhomerun
+RUN git checkout 7c54382fb681d03888b469033e50bebaf4ce6bce
 RUN make
 
 FROM alpine:3.17
