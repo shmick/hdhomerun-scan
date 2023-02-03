@@ -13,23 +13,23 @@ Auto discovery is not possible with Docker on MacOS, so an IP of a tuner will ne
 
 #### Run a scan (default behaviour)
 ```bash
-$ docker run --network host shmick/hdhomerun-scan
+$ docker run --network host ghcr.io/shmick/hdhomerun-scan
 ```
 
 #### Run a scan using the IP of a tuner
 ```bash
-$ docker run shmick/hdhomerun-scan channel_scan.sh -d <IP of HDHR>
+$ docker run ghcr.io/shmick/hdhomerun-scan channel_scan.sh -d <IP of HDHR>
 ```
 
 #### Log the results to a CSV file
 
 ```bash
-$ docker run -v $HOME:/app/data shmick/hdhomerun-scan channel_scan.sh -d 192.168.1.31 -l data/homerunlog.csv
+$ docker run -v $HOME:/app/data ghcr.io/shmick/hdhomerun-scan channel_scan.sh -d 192.168.1.31 -l data/homerunlog.csv
 ```
 
 #### Run a report on the CSV file
 ```bash
-$ docker run -v $HOME:/app/data shmick/hdhomerun-scan channel_report.sh data/homerunlog.csv
+$ docker run -v $HOME:/app/data ghcr.io/shmick/hdhomerun-scan channel_report.sh data/homerunlog.csv
 
 Timestamp		    RF	Strngth	dBmV	dBm	   Quality Symbol  Virtual	Name
 ----------------------------------------------------------------------------------
