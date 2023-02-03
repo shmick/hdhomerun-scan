@@ -2,7 +2,7 @@ FROM alpine:3.17 as build
 
 ARG VERSION="2022.12.02"
 
-RUN apk add --no-cache build-base curl git
+RUN apk add --no-cache build-base curl git linux-headers
 WORKDIR /src
 RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_scan.sh
 RUN curl -sO https://raw.githubusercontent.com/shmick/TV_Stuff/master/channel_report.sh
