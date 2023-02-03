@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 as build
+FROM public.ecr.aws/ubuntu/ubuntu:22.04 as build
 
 ARG VERSION="ubuntu"
 
@@ -12,7 +12,7 @@ RUN git clone https://github.com/Silicondust/libhdhomerun
 WORKDIR /src/libhdhomerun
 RUN make
 
-FROM ubuntu:22.04
+FROM public.ecr.aws/ubuntu/ubuntu:22.04
 WORKDIR /usr/local/bin
 COPY --from=build /src/libhdhomerun/hdhomerun_config .
 WORKDIR /app
