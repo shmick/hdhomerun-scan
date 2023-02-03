@@ -1,4 +1,4 @@
-FROM alpine:3 as build
+FROM alpine:3.17 as build
 LABEL maintainer="shmick"
 
 RUN apk add --no-cache build-base curl git
@@ -9,7 +9,7 @@ RUN git clone https://github.com/Silicondust/libhdhomerun
 WORKDIR /src/libhdhomerun
 RUN make
 
-FROM alpine:3
+FROM alpine:3.17
 RUN apk add --no-cache bash
 WORKDIR /usr/local/bin
 COPY --from=build /src/libhdhomerun/hdhomerun_config .
