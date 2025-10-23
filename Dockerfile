@@ -1,6 +1,6 @@
-FROM public.ecr.aws/ubuntu/ubuntu:22.04 as build
+FROM public.ecr.aws/debian/debian:13-slim AS build
 
-ARG VERSION="2022.12.02"
+ARG VERSION="2025.05.06"
 
 RUN apt update
 RUN apt install -y curl git build-essential
@@ -12,7 +12,7 @@ RUN git clone https://github.com/Silicondust/libhdhomerun
 WORKDIR /src/libhdhomerun
 RUN make
 
-FROM public.ecr.aws/ubuntu/ubuntu:22.04
+FROM public.ecr.aws/debian/debian:13-slim
 WORKDIR /usr/local/bin
 COPY --from=build /src/libhdhomerun/hdhomerun_config .
 WORKDIR /app
